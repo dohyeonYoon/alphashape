@@ -10,7 +10,7 @@ projected_points = np.array(data)
 proj_points_2D = projected_points[:, :2]
 
 # MinMax Scaling
-scaler = MinMaxScaler(feature_range = (0.0,0.1)) # feature 범위를 0~1사이로 변환 
+scaler = MinMaxScaler(feature_range = (0.0,0.1)) 
 scaler.fit(proj_points_2D)
 transformed_xy = scaler.transform(proj_points_2D)
 
@@ -42,11 +42,11 @@ else:
     inverse_transformed_shapes_xy = []
 boundary_point_list = inverse_transformed_shapes_xy
 
-# 2차원 투영된 점
+# Projected 2D point
 proj_X = projected_points[:, 0]
 proj_Y = projected_points[:, 1]
 
-# 2차원 경계점
+# Exterior 2D point
 boundary_X = inverse_transformed_shapes_xy[:,0]
 boundary_Y = inverse_transformed_shapes_xy[:,1]
 
